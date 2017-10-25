@@ -1,0 +1,11 @@
+p {
+    background: blue;
+    color: white;
+    }
+p.dbl {
+    background: yellow;
+    color: black;
+    }
+.checkbox{
+    text-decoration: line-through;
+}    

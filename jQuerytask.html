@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Exercise</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="jQueryTaskStyles.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2>Task No:5</h2>
+            <p>Double-click here to change the background color</p>
+        </div>
+
+        <div class="col-12 mt-5">
+                <h2>Task No:10</h2>
+                <a href="http://www.google.com">Google</a></br>
+                <a href="http://www.facebook.com">Facebook</a>
+            </div>
+
+        <div class="col-12 mt-5">
+            <h2>Task No:15</h2>
+            <label>Input Your Name</label>
+            <input class="form-control" type="text">
+            <div id="key"></div>
+        </div>
+
+        <div class="col-12 mt-5">
+            <h2>Task No:20</h2>
+            <div id="targetElement"></div>
+        </div>
+
+        <div class="col-12 mt-5">
+                <h2>Task No:25</h2>
+                <input class="form-control mt-1" type="checkbox"><label>Rashad</label>
+                <input class="form-control mt-1" type="checkbox"><label>Rashad</label>
+                <input class="form-control mt-1" type="checkbox"><label>Rashad</label>
+                <input class="form-control mt-1" type="checkbox"><label>Rashad</label>
+                <input class="form-control mt-1" type="checkbox"><label>Rashad</label>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
+<script src="key.js"></script>
+<script type="text/javascript">
+    $('document').ready(function(){
+        
+        //Task No 5
+        $('p').on('dblclick',function(){
+            $('p').toggleClass('dbl');
+        });
+
+         //Task No 10
+        $('input').keydown(function(event){
+           var keyNumber = event.which;
+           $('div#key').html('Key Pressed:'+keyCodes[keyNumber]);
+       });
+
+       
+       $('*').click(function(event){
+           //console.log(event.target.nodeName);
+        $('div#targetElement').html('Triggered Element is : '+event.target.nodeName);
+       });
+
+       
+       $('input[type="checkbox"]').on('click',function(){
+           console.log('you got me');
+           $(this).next().toggleClass('checkbox')
+       });
+
+       
+       $('a').first().click(function(event){
+           event.preventDefault();
+       })
+
+    })
+</script>  
+</body>
+</html>
